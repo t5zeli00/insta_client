@@ -1,0 +1,70 @@
+<<<<<<< HEAD
+<ion-view class="home" ng-init="refresh()">
+
+    <ion-content class="main-content">
+
+        <div class="list card" ng-repeat="post in posts">
+
+            <a class="item item-avatar" ng-if="post.user.userid === currentUser.userid" href="#/app/account">
+                <img ng-src="{{ post.user.avatar }}">
+                <h2>{{ post.user.username }}</h2>
+                <p><span am-time-ago="post.createdTime"></span></p>
+            </a>
+
+            <a class="item item-avatar" ng-if="post.user.userid !== currentUser.userid" ng-href="#/app/home-user/{{post.user.userid}}">
+                <img ng-src="{{ post.user.avatar }}">
+                <h2>{{ post.user.username }}</h2>
+                <p><span am-time-ago="post.createdTime"></span></p>
+            </a>
+
+            <div class="item item-image">
+                <img ng-src="{{ post.image }}">
+            </div>
+
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item"><i ng-class="{'icon ion-ios-heart-outline': !post.tickLike, 'icon ion-ios-heart': post.tickLike}" ng-click="toggleLike(post)"></i></a>
+            </div>
+
+            <div class="item item-body">
+                <p><i class="icon ion-ios-heart"></i><b ng-repeat="like in post.likes"><a href="#/app/home-user/{{ like.userid }}"> {{ like.username }} </a></b></p>
+
+                <p class="img-caption">{{ post.caption }}</p>
+                <p class="img-comments" ng-repeat="each in post.comments">
+                    <b>{{ each.username }}</b> {{ each.text }}
+                </p>
+
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper">
+                        <input type="text" placeholder="Add a comment" ng-model="comment.text">
+                    </label>
+                    <button class="button button-small" ng-click="postComment(post)">
+                        Send
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        
+    </ion-content>
+=======
+<ion-view title="Home" id="page2">
+  <ion-content padding="true" class="has-header">
+    <div id="home-container1">
+      <ion-list id="home-list4">
+        <ion-item class="item-avatar item-icon-right" id="home-list-item1">
+          <img src="img/wFfKyCs1Qt6CDp9mBMl9_1462186591-96cf3713f72cefd500f2069118164b08.jpeg">
+          <h2>Liubov</h2>
+          <i class="icon ion-android-more-horizontal"></i>
+        </ion-item>
+      </ion-list>
+       <div>
+        <img src="https://s3.amazonaws.com/ionic-io-static/tbd9tmATcmMpftCmtf0d_Ucu3OSd8OAM.jpg" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+    </div>
+    <div id="home-button-bar1" class="button-bar">
+      <button id="home-button7" class="button button-stable  button-block icon ion-ios-heart-outline">&nbsp5</button>
+      <button ui-sref="chat" id="home-button8" class="button button-stable  button-block icon ion-ios-chatbubble-outline"></button>
+    </div> 
+  </ion-content>
+>>>>>>> dabc0b6f0fa4aa48adf0087bcddeec9eaea27f40
+</ion-view>
